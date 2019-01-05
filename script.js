@@ -2,11 +2,19 @@ var svgLayout = document.getElementById("svgLayout");
 var x = 0;
 var posX = 0;
 var sqaure = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-window.onload = function () {
+var startbtn = document.getElementById("start");
+var timer = document.getElementById("time");
+var time = document.getElementsByClassName("time-show");
+
+startbtn.addEventListener("click", function(){
+    startbtn.style.display = "none";
+    time[0].style.display="block";
+    timer.style.display = "flex";
     var fiveMinutes = 60 * 1,
-        display = document.querySelector('#time');
+    display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
-};
+});
+    
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {

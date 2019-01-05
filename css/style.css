@@ -1,8 +1,25 @@
+#start {
+  position: absolute;
+  display: block;
+  top: 45%;
+  width: 22%;
+  height: 9%;
+  color: green;
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: bold; }
+
+#start:focus {
+  display: none; }
+
 .rectangle__rotate {
   transform: rotate(20deg); }
 
 .time-show {
   position: absolute;
+  display: none;
   top: 20px;
   color: red;
   font-size: 30px;
