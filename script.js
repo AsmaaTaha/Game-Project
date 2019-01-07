@@ -5,7 +5,7 @@ var square = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
 var startbtn = document.getElementById("start");
 var timer = document.getElementById("time");
 var time = document.getElementsByClassName("time-show");
-
+var clicked = false;
 
 class Square {
     constructor(square, x, y, length, width, fill) {
@@ -41,6 +41,7 @@ startbtn.addEventListener("click", function () {
     var fiveMinutes = 60 * 1,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
+    clicked = true;
 });
 
 function startTimer(duration, display) {
@@ -64,13 +65,13 @@ function startTimer(duration, display) {
 }
 
 window.addEventListener("keydown", function (e) {
-    if (e.keyCode === 39 && posX < 450) {
+    if (e.keyCode === 39 && posX < 450 && clicked == true) {
         posX += 10;
         sq = new Square(square, posX, 470, 50, 50, "#ee76ad");
         sq.drawSquare();
         console.log(posX);
     }
-    if (e.keyCode === 37 && posX > 0) {
+    if (e.keyCode === 37 && posX > 0 && clicked== true) {
         posX -= 10;
         sq = new Square(square, posX, 470, 50, 50, "#ee76ad");
         sq.drawSquare();
