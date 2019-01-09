@@ -1,6 +1,8 @@
 @import 'base/animation';
 
 @import 'components/btn'; 
+@import 'components/canvas';
 @import 'components/rectangle'; 
 @import 'components/time';
-@import 'components/svglayout';
+ 
+@import 'layout/body-layout';
